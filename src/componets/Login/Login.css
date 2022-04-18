@@ -1,0 +1,19 @@
+label{
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.login-form{
+    border: 1px solid black;
+    padding: 30px;
+    margin-top: 50px;
+    /* background-color: #216af2; */
+    color: white;
+    border-radius: 10px;
+}
+input{
+    font-size: 25px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+}

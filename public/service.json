@@ -1,0 +1,31 @@
+[
+    {
+        "title": "Wedding/Engagement",
+        "id": 1,
+        "description":" Wedding/Engagement/Holud Premimum quality photography ",
+        "price": 120,
+        "img": "https://i.ibb.co/XzRT2c6/Temp-200x200-1.png"
+    },
+    {
+        "title": "Birthday/kids",
+        "id": 2,
+        "description":" Birthday/kids/New Borns Premimum quality photography ",
+        "price": 100,
+        "img": "https://i.ibb.co/GtPLVGS/Temp-200x200-2.png"
+    },
+    {
+        "title": "Product/E-commarce",
+        "id": 3,
+        "description":" Commercial/product/E-commarce Premimum quality photography ",
+        "price": 150,
+        "img": "https://i.ibb.co/S0QWCtm/Temp-200x200.png"
+    },
+    {
+        "title": "Fashion/Outdoor",
+        "id": 4,
+        "description":" Gorgious fashionable  Premimum quality photography ",
+        "price": 120,
+        "img": "https://i.ibb.co/YDJmQnB/Temp-200x200-3.png"
+    }
+
+]
