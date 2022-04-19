@@ -17,7 +17,7 @@
     margin-bottom: 10px;
     border-radius: 10px;
 }
-button{
+.card-btn{
     width: 90%;
     border: none;
     padding: 10px;
@@ -26,6 +26,6 @@ button{
     border-radius: 5px;
     margin-left: 5px;
 }
-button:hover{
+.card.btn:hover{
     color:orange;
 }

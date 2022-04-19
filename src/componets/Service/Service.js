@@ -10,7 +10,7 @@ const Service = ({service}) => {
             <p className='text-primary fs-5'>{title}</p>
             <p>{description}</p>
             <p className='text-danger'> Price: ${price}</p>
-            <button>Book Now</button>
+            <button className='card-btn'>Book Now</button>
          </div>
         </div>
     );
