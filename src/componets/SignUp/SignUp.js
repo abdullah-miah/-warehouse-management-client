@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Social from '../Social/Social';
 import auth from '../../firebase.init';
 
 const SignUp = () => {
+    const navigate = useNavigate();
     const [
         createUserWithEmailAndPassword,
         user,
@@ -12,7 +13,15 @@ const SignUp = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
       const signUphandle=event=>{
-          event.preventDefault();
+        event.preventDefault();
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+
+        createUserWithEmailAndPassword(email, password);
+      }
+      if(user){
+          navigate('/');
       }
     return (
         <>
@@ -21,15 +30,15 @@ const SignUp = () => {
            <form onSubmit={signUphandle} className='w-25 mx-auto login-form bg-info'>
            <label>Your Name</label>
                <br/>
-               <input type="text" placeholder="Your Name" required></input>
+               <input name='name' type="text" placeholder="Your Name" required></input>
                <br/>
                <label>Email Adress</label>
                <br/>
-               <input type="email" placeholder="Email adress" required></input>
+               <input name='email' type="email" placeholder="Email adress" required></input>
                <br/>
                <label>Password</label>
                <br/>
-               <input type="password" placeholder='password' required></input>
+               <input name='password' type="password" placeholder='password' required></input>
                <br/>
                <input className='mt-3' type="submit" value="SignUp"></input>
                <span>I have an account ?</span><span> <Link to="/login"> Login here</Link></span>
