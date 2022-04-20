@@ -1,13 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Social from '../Social/Social';
+import auth from '../../firebase.init';
 
 const SignUp = () => {
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+      const signUphandle=event=>{
+          event.preventDefault();
+      }
     return (
         <>
         <div>
             <h4 className='text-center mt-5 text-primary'> SignUp Here</h4>
-           <form className='w-25 mx-auto login-form bg-info'>
+           <form onSubmit={signUphandle} className='w-25 mx-auto login-form bg-info'>
            <label>Your Name</label>
                <br/>
                <input type="text" placeholder="Your Name" required></input>
