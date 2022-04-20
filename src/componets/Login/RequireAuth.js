@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, useLocation } from 'react-router-dom';
 import auth from '../../firebase.init';
 
-const RequirAuth = ({children}) => {
+const RequireAuth = ({children}) => {
     const [user] = useAuthState(auth);
     const location = useLocation();
     if(!user){
@@ -12,4 +12,4 @@ const RequirAuth = ({children}) => {
     return children;
 };
 
-export default RequirAuth;
+export default RequireAuth;

@@ -8,7 +8,7 @@ import Footer from './componets/Footer/Footer';
 import Header from './componets/Header/Header';
 import Home from './componets/Home/Home';
 import Login from './componets/Login/Login';
-import RequirAuth from './componets/Login/RequirAuth';
+import RequireAuth from './componets/Login/RequireAuth';
 
 import Services from './componets/Services/Services';
 import SignUp from './componets/SignUp/SignUp';
@@ -24,7 +24,11 @@ function App() {
       <Route path='/blog' element={<Blog></Blog>}></Route>
       <Route path='/signup' element={<SignUp></SignUp>}></Route>
       <Route path='/checkout' element={<CheckOUt></CheckOUt>}></Route>
-      <Route path='/services' element={<Services></Services>}></Route>
+      <Route path='/services' element={
+        <RequireAuth>
+          <Services></Services>
+        </RequireAuth>
+      }></Route>
       <Route path="/login" element={<Login></Login>}></Route>
     </Routes>
     <Footer></Footer>

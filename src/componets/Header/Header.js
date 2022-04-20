@@ -1,10 +1,17 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
 import "./Header.css";
 
 
 const Header = () => {
+  const [user]= useAuthState(auth);
+  const hadleSignOut =()=>{
+    signOut(auth);
+  }
   return (
     <div>
       <Navbar bg="primary" expand="lg">
@@ -25,12 +32,12 @@ const Header = () => {
         </Nav.Link>
       </Nav>
       <Nav>
-      <Nav.Link className='text-white'>
-      <Link className='text-white text-decoration-none' to="/signup"> SignUp </Link>
-         </Nav.Link>
-      <Nav.Link className='text-white'>
+      {
+        user?<button className='btn btn-link text-white text-decoration-none' onClick={hadleSignOut}>SignOut</button>
+        :
+        <Nav.Link className='text-white'>
       <Link className='text-white text-decoration-none' to="/login"> Login </Link>
-         </Nav.Link>
+         </Nav.Link>}
       </Nav>
     </Navbar.Collapse>
   </Container>
