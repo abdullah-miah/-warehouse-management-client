@@ -1,27 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import Social from '../Social/Social';
 import auth from '../../firebase.init';
+import { async } from '@firebase/util';
 
 const SignUp = () => {
     const navigate = useNavigate();
+    const [agree, setAgree]=useState(false);
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
-      const signUphandle=event=>{
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
+      const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+      const signUphandle= async event=>{
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-
-        createUserWithEmailAndPassword(email, password);
+          await createUserWithEmailAndPassword(email, password);
+          await updateProfile({ displayName:name });
+        
       }
       if(user){
           navigate('/');
+          console.log('user', user)
       }
     return (
         <>
@@ -39,9 +44,19 @@ const SignUp = () => {
                <label>Password</label>
                <br/>
                <input name='password' type="password" placeholder='password' required></input>
+               <div className='mt-3'>
+               <input onClick={()=>setAgree(!agree)} type="checkbox" name='checkbox'></input>
+               <span className={agree?'ps-2 text-primary': 'ps-2 text-danger'}>Accept Terms and Conditions</span>
+               </div>
                <br/>
-               <input className='mt-3' type="submit" value="SignUp"></input>
-               <span>I have an account ?</span><span> <Link to="/login"> Login here</Link></span>
+               <input 
+               disabled={!agree}
+               className='mt-3' 
+               type="submit" 
+               value="SignUp">
+               </input>
+               <span>Already have an account ?</span><span> <Link to="/login"> Login here</Link></span>
+               
            </form>
         </div>
         <Social></Social>

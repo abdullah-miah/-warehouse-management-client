@@ -9,9 +9,7 @@ const Social = () => {
     const navigate = useNavigate();
     let errorElement;
     if (error || error1) {
-        errorElement =<div>
-        <p>Error: {error?.message} {error1?.message}</p>
-      </div>
+        errorElement =<p>Error: {error?.message} {error1?.message}</p>
       }
      if(user || user1){
          navigate('/');

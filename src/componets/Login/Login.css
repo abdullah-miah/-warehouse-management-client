@@ -11,7 +11,7 @@ label{
     color: white;
     border-radius: 10px;
 }
-input{
+input:not([type=checkbox]){
     font-size: 25px;
     width: 100%;
     padding: 8px;
