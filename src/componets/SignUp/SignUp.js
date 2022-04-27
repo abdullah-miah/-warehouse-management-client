@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import Social from '../Social/Social';
 import auth from '../../firebase.init';
 import { async } from '@firebase/util';
+import Loading from '../Loading/Loading';
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -24,9 +25,11 @@ const SignUp = () => {
           await updateProfile({ displayName:name });
         
       }
+      if(loading){
+          return <Loading></Loading>
+      }
       if(user){
           navigate('/');
-          console.log('user', user)
       }
     return (
         <>

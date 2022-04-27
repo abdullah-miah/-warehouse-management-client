@@ -3,8 +3,12 @@ import React, { useRef } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
 import "../Login/Login.css";
 import Social from '../Social/Social';
+import { ToastContainer, toast } from 'react-toastify';
+
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const emailRef=useRef('');
@@ -26,6 +30,9 @@ const Login = () => {
         const password = passwordRef.current.value;
         signInWithEmailAndPassword(email, password);
     }
+    if(loading){
+        return <Loading></Loading>
+    }
     if(user){
         navigate(from, { replace: true });
     }
@@ -35,8 +42,10 @@ const Login = () => {
       }
       const resetPassword= async()=>{
         const email = emailRef.current.value;
-        await sendPasswordResetEmail(email);
-        alert('Sent email');
+        if(email){
+            await sendPasswordResetEmail(email);
+        toast('Sent email');
+        }
       }
     return (
         <div>
@@ -53,11 +62,12 @@ const Login = () => {
                <br/>
                <input className='mt-3' type="submit" value="Login"></input>
                <span>I have no account ?</span><span> <Link to="/signup"> Create an Account</Link></span>
-               <p><a href='#'onClick={resetPassword} className='text-decoration-none text-white'>Forget Password</a></p>
+               <p> <span>Forget password?</span><a href='#'onClick={resetPassword} className='text-decoration-none'>Forget Password</a></p>
            </form>
            
         </div>
         <Social></Social>
+        <ToastContainer />
         </div>
     );
 };
