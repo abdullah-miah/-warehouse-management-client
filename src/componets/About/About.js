@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../About/About.css'
 
 const About = () => {
@@ -13,6 +14,7 @@ const About = () => {
                <p>Weeding / Holud/Birthday/e-commarce and Outdoor premimum quality capture in any day of your near area.
                    I'm experience Photographer in your area. I have three years expart person.
                    Belive me ! try to best photo in your valuable moment.
+                   <Link className='text-decoration-none' to='/'>Book Me!</Link>
                </p>
            </div>
         </div>
