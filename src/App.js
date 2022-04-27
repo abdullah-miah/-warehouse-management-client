@@ -9,6 +9,7 @@ import Header from './componets/Header/Header';
 import Home from './componets/Home/Home';
 import Login from './componets/Login/Login';
 import RequireAuth from './componets/Login/RequireAuth';
+import PageNotFound from './componets/PageNotFound/PageNotFound';
 
 import Services from './componets/Services/Services';
 import SignUp from './componets/SignUp/SignUp';
@@ -30,6 +31,7 @@ function App() {
         </RequireAuth>
       }></Route>
       <Route path="/login" element={<Login></Login>}></Route>
+      <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
     </Routes>
     <Footer></Footer>
     </>
