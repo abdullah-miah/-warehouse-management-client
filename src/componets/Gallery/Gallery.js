@@ -28,7 +28,7 @@ const Gallery = () => {
     />
 
     <img style={{height: '550px'}}
-      src={"https://i.pinimg.com/originals/fa/b6/56/fab656ed1e1938f34080c1599c765f08.jpg"}
+      src={"https://www.imagesplatform.com/mohsin_site/uploads/2020_02_18/birthday-girl-in-pink-dress.jpg"}
       className="w-100 shadow-1-strong rounded mb-4"
       alt="Boat on Calm Water"
     />
