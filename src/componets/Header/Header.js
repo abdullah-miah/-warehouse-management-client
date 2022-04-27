@@ -32,6 +32,7 @@ const Header = () => {
         </Nav.Link>
       </Nav>
       <Nav>
+        <span className='btn btn-success text-white d-flex justify-content-center align-items-center'>{user?.displayName && user.displayName}</span>
       {
         user?<button className='btn btn-link text-white text-decoration-none' onClick={hadleSignOut}>SignOut</button>
         :

@@ -31,10 +31,14 @@ const SignUp = () => {
       if(user){
           navigate('/');
       }
+      let errorElement;
+    if (error) {
+        errorElement =<p>Error: {error?.message}</p>
+      }
     return (
         <>
         <div>
-            <h4 className='text-center mt-5 text-primary'> SignUp Here</h4>
+            <h2 className='text-center mt-5 text-primary'> Please SignUp Here</h2>
            <form onSubmit={signUphandle} className='w-25 mx-auto login-form bg-info'>
            <label>Your Name</label>
                <br/>
@@ -58,7 +62,7 @@ const SignUp = () => {
                type="submit" 
                value="SignUp">
                </input>
-               <span>Already have an account ?</span><span> <Link to="/login"> Login here</Link></span>
+               <span>Already have an account ?</span><span> <Link className='text-decoration-none' to="/login"> Login here</Link></span>
                
            </form>
         </div>
