@@ -16,7 +16,7 @@ const Header = () => {
     <div>
       <Navbar bg="primary" expand="lg">
   <Container>
-    <Navbar.Brand className='text-white' href="#home">PhotoGraphy With AB</Navbar.Brand>
+    <Navbar.Brand className='text-white' href="#home"><span className='text-warning'>PhotoGraphy With AB</span></Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
@@ -32,7 +32,7 @@ const Header = () => {
         </Nav.Link>
       </Nav>
       <Nav>
-        <span className='btn btn-success text-white d-flex justify-content-center align-items-center'>{user?.displayName && user.displayName}</span>
+        <span className='text-white d-flex justify-content-center align-items-center'>{user?.displayName && user.displayName}</span>
       {
         user?<button className='btn btn-link text-white text-decoration-none' onClick={hadleSignOut}>SignOut</button>
         :

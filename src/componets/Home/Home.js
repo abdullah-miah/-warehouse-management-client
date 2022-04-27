@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Service from '../Service/Service';
 import Slider from './Slider/Slider';
 import "./Home.css"
+import Gallery from '../Gallery/Gallery';
 
 const Home = () => {
     const [services, setServices]= useState([]);
@@ -23,6 +24,7 @@ const Home = () => {
                 }
 
             </div>
+            <Gallery></Gallery>
         </div>
     );
 };
