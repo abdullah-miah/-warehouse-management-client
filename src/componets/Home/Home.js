@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Service from '../Service/Service';
 import Slider from './Slider/Slider';
 import "./Home.css"
 import Gallery from '../Gallery/Gallery';
+import { servicesContext } from '../../App';
 
 const Home = () => {
-    const [services, setServices]= useState([]);
+  const [services, setServices]=useContext(servicesContext);
     useEffect(()=>{
         fetch('service.json')
         .then(res=>res.json())

@@ -1,4 +1,5 @@
 
+import { createContext, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './componets/About/About';
@@ -13,11 +14,12 @@ import PageNotFound from './componets/PageNotFound/PageNotFound';
 
 import Services from './componets/Services/Services';
 import SignUp from './componets/SignUp/SignUp';
-
+export const servicesContext = createContext();
 
 function App() {
+  const [services, setServices]=useState([]);
   return (
-    <>
+    <servicesContext.Provider value={[services, setServices]}>
     <Header></Header>
     <Routes>
       <Route path='/' element={<Home></Home>}></Route>
@@ -25,7 +27,7 @@ function App() {
       <Route path='/blog' element={<Blog></Blog>}></Route>
       <Route path='/signup' element={<SignUp></SignUp>}></Route>
       <Route path='/checkout' element={<CheckOUt></CheckOUt>}></Route>
-      <Route path='/services' element={
+      <Route path='/services/:id' element={
         <RequireAuth>
           <Services></Services>
         </RequireAuth>
@@ -34,7 +36,7 @@ function App() {
       <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
     </Routes>
     <Footer></Footer>
-    </>
+    </servicesContext.Provider>
   );
 }
 
