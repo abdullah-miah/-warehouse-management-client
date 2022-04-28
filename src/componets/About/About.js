@@ -8,7 +8,7 @@ const About = () => {
            <div>
                <img src={'https://lh3.googleusercontent.com/_VXv8ASBS_DBdWP2N_2D2osI4cuvvfrgEeqmMpaCcW109Fxe-Cv41mddgBqHjlRjeSxMpMQlJCdFQ7n2eFrgyJhuVD07Ek7uaZzS'}></img>
                <h2> Hey, I'm Abdullah!</h2>
-               <p>Professional Photographer in your area. I'm always ready capture your memoralble moment.</p>
+               <p>Professional Photographer in your area. I'm always ready capture your memorable moment.</p>
            </div>
            <div >
                <p>Weeding / Holud/Birthday/e-commarce and Outdoor premimum quality capture in any day of your near area.

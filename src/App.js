@@ -10,6 +10,7 @@ import Header from './componets/Header/Header';
 import Home from './componets/Home/Home';
 import Login from './componets/Login/Login';
 import RequireAuth from './componets/Login/RequireAuth';
+import OrderConfirm from './componets/OrderConfirm/OrderConfirm';
 import PageNotFound from './componets/PageNotFound/PageNotFound';
 
 import Services from './componets/Services/Services';
@@ -27,6 +28,7 @@ function App() {
       <Route path='/blog' element={<Blog></Blog>}></Route>
       <Route path='/signup' element={<SignUp></SignUp>}></Route>
       <Route path='/checkout' element={<CheckOUt></CheckOUt>}></Route>
+      <Route path='/orderConfirm' element={<OrderConfirm></OrderConfirm>}></Route>
       <Route path='/services/:id' element={
         <RequireAuth>
           <Services></Services>

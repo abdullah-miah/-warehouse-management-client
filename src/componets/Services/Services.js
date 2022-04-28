@@ -7,7 +7,7 @@ const Services = () => {
     const {id}=useParams()
     const [Services]= useContext(servicesContext)
     const service =Services.find((service)=>service.id ==id)
-    console.log(service);
+   
     return (
         <div className='w-25 mx-auto mt-3'>
             <h1 className='text-center text-primary'>Please CheckOut</h1>

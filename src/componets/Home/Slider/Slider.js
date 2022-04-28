@@ -9,7 +9,7 @@ import banner3 from '../../../images/slider/banner-3.jpg';
 const Slider = () => {
     const [index, setIndex] = useState(0);
 
-  const handleSelect = (selectedIndex, e) => {
+  const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
     return (
@@ -21,8 +21,8 @@ const Slider = () => {
                     alt="First slide"
                 />
                 <Carousel.Caption className='caption'>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h3>Fashion and outdoor</h3>
+                    <p>Stylish and fashionable Premimum quality photography.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -33,8 +33,8 @@ const Slider = () => {
                 />
 
                 <Carousel.Caption className='caption'>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h3>Birthday/kids/Party center</h3>
+                    <p>Birthday/kids/New Borns Premimum quality photography.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -45,9 +45,9 @@ const Slider = () => {
                 />
 
                 <Carousel.Caption className='caption'>
-                    <h3>Third slide label</h3>
+                    <h3>Wedding/Engagement/Holud</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                    Wedding/Engagement/Holud Premimum quality photography.Some capture printed copy handover If you  need.
                     </p>
                 </Carousel.Caption>
             </Carousel.Item>
