@@ -29,13 +29,15 @@ const AddProducts = () => {
       };
      
     return (
-        <div className='container'>
-            <div className='row'>
-                <div className='col-lg-6 col-sm-6'>
-                <div className='w-50 mx-auto mt-4'>
+        <div>
+            <div className='container'>
+            <div className='bg-light border pb-3 mt-3'>
+                <div className='w-100 mx-auto mt-4 '>
             <h2 className='text-center text-primary '>Add Products</h2>
             <form onSubmit={handleSubmit} className='w-50 mx-auto'>
-                    <label>Items Name</label>
+                    <div className='row gx-5'>
+                        <div className='col-lg-6 col-sm-6'>
+                        <label>Items Name</label>
                      <input  type='text' name='name' placeholder='Items name' required></input>
                     <label>Price</label>
                      <input type='text' name='price' placeholder='Price' required></input>
@@ -43,24 +45,27 @@ const AddProducts = () => {
                      <input type='text' name='quantity' placeholder='Quantity' required></input>
                      <label>Supplier Name</label>
                      <input type='text' name='supplier' placeholder='Supplier Name' required></input>
-                     <label>Image Link</label>
+                        </div>
+                        <div className='col-lg-6 col-sm-6 mt-5'>
+                        <label>Image Link</label>
                      <input type='text' name='image' placeholder='Image Link' required></input>
                     <label> Short Description</label>
                      <textarea name='description' cols='50' rows='5' required>
                         write some description 
                      </textarea>
                      <br/>
-                     {/* <button
-                     disabled={!agree}
-                    className='btn btn-primary mt-3 '>Confirm Booking</button> */}
-                    <input  type='submit' value='Add Product'></input>
-                
-            
-             
+                    <input className='btn btn-info mt-5'  type='submit' value='Add Product'></input>
+                        </div>
+                    </div>
+                    
+               
+                     
+                     
             </form>
         </div>
-                </div>
+                
             </div>
+        </div>
         </div>
         
     );
