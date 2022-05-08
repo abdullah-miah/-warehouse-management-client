@@ -8,6 +8,7 @@ const AddProducts = () => {
     const navigate = useNavigate()
     const handleSubmit = async (e) => {
         e.preventDefault();
+        navigate('/management')
         const product = {
           name: e.target.name.value,
           price: e.target.price.value,
@@ -26,16 +27,14 @@ const AddProducts = () => {
        toast.success(data.message);
      
       };
-      const NavigateToManagement = () =>{
-          navigate('/management')
-      }
+     
     return (
-        <div>
-            <div className='w-75 mx-auto mt-4'>
+        <div className='container'>
+            <div className='row'>
+                <div className='col-lg-6 col-sm-6'>
+                <div className='w-50 mx-auto mt-4'>
             <h2 className='text-center text-primary '>Add Products</h2>
             <form onSubmit={handleSubmit} className='w-50 mx-auto'>
-            <div>
-                <div>
                     <label>Items Name</label>
                      <input  type='text' name='name' placeholder='Items name' required></input>
                     <label>Price</label>
@@ -55,11 +54,13 @@ const AddProducts = () => {
                      disabled={!agree}
                     className='btn btn-primary mt-3 '>Confirm Booking</button> */}
                     <input  type='submit' value='Add Product'></input>
-                </div>
-            </div>
+                
+            
              
             </form>
         </div>
+                </div>
+            </div>
         </div>
         
     );
