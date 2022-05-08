@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Service from '../Service/Service';
-import Slider from './Slider/Slider';
 import "./Home.css"
-import Gallery from '../Gallery/Gallery';
 import { servicesContext } from '../../App';
+import AddProducts from '../AddProducts/AddProducts';
 
 const Home = () => {
   const [services, setServices]=useContext(servicesContext);
@@ -14,7 +13,6 @@ const Home = () => {
     },[])
     return (
         <div>
-            <Slider></Slider>
             <h1 className='text-center my-4 text-primary'> Provider Services</h1>
             <div className='service container'>
                 {
@@ -25,7 +23,6 @@ const Home = () => {
                 }
 
             </div>
-            <Gallery></Gallery>
         </div>
     );
 };

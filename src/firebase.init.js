@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAbvHpeFrGh83aRMpkkd5degBaQkdMqRyQ",
-  authDomain: "photography-with.firebaseapp.com",
-  projectId: "photography-with",
-  storageBucket: "photography-with.appspot.com",
-  messagingSenderId: "541980069281",
-  appId: "1:541980069281:web:3d8b03988c2ca705af4fe0"
+  apiKey: "AIzaSyB0xOmLgkCOHhbrnTKXL8GnG-c5O9dlRjY",
+  authDomain: "smart-hub-management.firebaseapp.com",
+  projectId: "smart-hub-management",
+  storageBucket: "smart-hub-management.appspot.com",
+  messagingSenderId: "830550123632",
+  appId: "1:830550123632:web:2758d3663889055b9340b5"
 };
 
 // Initialize Firebase

@@ -6,9 +6,10 @@ import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import "../Login/Login.css";
 import Social from '../Social/Social';
-import { ToastContainer, toast } from 'react-toastify';
+
 
   import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const emailRef=useRef('');
@@ -68,7 +69,7 @@ const Login = () => {
            
         </div>
         <Social></Social>
-        <ToastContainer />
+        
         </div>
     );
 };

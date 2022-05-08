@@ -30,6 +30,7 @@ const SignUp = () => {
       }
       if(user){
           navigate('/');
+          
       }
       let errorElement;
     if (error) {

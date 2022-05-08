@@ -16,14 +16,13 @@ const Header = () => {
     <div>
       <Navbar bg="primary" expand="lg">
   <Container>
-    <Navbar.Brand className='text-white' href="#home"><span className='text-warning'>PhotoGraphy With AB</span></Navbar.Brand>
+    <Navbar.Brand className='text-white' href="#home"><span className='text-warning'>Smart Hub Management</span></Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
         <Nav.Link className='link'>
           <Link className='text-white text-decoration-none' to="/"> Home </Link>
         </Nav.Link>
-        <Nav.Link className='text-white'>Services</Nav.Link>
         <Nav.Link className='text-white'>
         <Link className='text-white text-decoration-none' to="/blog"> Blog </Link>
         </Nav.Link>
@@ -32,6 +31,12 @@ const Header = () => {
         </Nav.Link>
       </Nav>
       <Nav>
+      {
+        user?<span className='d-flex justify-content-center align-items-center'><Link className='text-white mx-2 text-decoration-none ' to ='/addProduct'>AddProducts</Link></span>: ""
+      }
+      {
+        user?<span className='d-flex justify-content-center align-items-center'><Link className='text-white mx-2 text-decoration-none ' to ='/management'>Management</Link></span>: ""
+      }
         <span className='text-white d-flex justify-content-center align-items-center'>{user?.displayName && user.displayName}</span>
       {
         user?<button className='btn btn-link text-white text-decoration-none' onClick={hadleSignOut}>SignOut</button>
