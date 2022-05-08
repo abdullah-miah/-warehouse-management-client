@@ -14,7 +14,7 @@ const Home = () => {
         }
         fatchData();
     },[]);
-    console.log(products)
+
     return (
         <div className='container w-75'>
             <h1 className='text-center text-primary'>Available Stock Product</h1>

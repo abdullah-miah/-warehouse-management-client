@@ -35,7 +35,7 @@ const Management = () => {
 
         <div className='w-75 mx-auto'>
           <div className="text-center my-5">
-      <button onClick={addProducts} type="button" className="btn btn-primary">AddProducts</button>
+      <button onClick={addProducts} type="button" className="btn btn-dark text-white w-25">AddProducts</button>
     </div>
             <h1 className='text-center text-primary my-3'>Product Management</h1>
             <Table  striped bordered hover>
