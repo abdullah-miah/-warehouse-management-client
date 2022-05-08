@@ -14,28 +14,21 @@ const Home = () => {
         }
         fatchData();
     },[]);
+    console.log(products)
     return (
         <div className='container w-75'>
-            <h1>Available Stock Product</h1>
-           <div>
-           <Container>
-  <Row>
-    
-    {
-                products.map(product=><CartProduct
+            <h1 className='text-center text-primary'>Available Stock Product</h1>
+           <div className='row gy-3'>
+       
+            {
+                products.slice(0,6).map(product=><CartProduct
                 key={product._id}
-                product ={product}
-                ></CartProduct>)
+                product={product}
+                >
+                </CartProduct>)
             }
-           
-  
-    
-  </Row>
-</Container>
           
-            
-            
-        </div>
+           </div>
         </div>
     );
 };
