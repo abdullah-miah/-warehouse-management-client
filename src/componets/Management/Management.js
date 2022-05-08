@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Management = () => {
     const [products, setProducts] =useState([]);
@@ -65,7 +65,9 @@ const Management = () => {
       <td>{product.supplier}</td>
       <td>{product.quantity}</td>
       <td>{product.supplier}</td>
-      <td><button>Update</button></td>
+      <td><button>
+        Update
+        </button></td>
       <td><button onClick={()=>handleDelete(product._id)}>Delete</button></td>
       
     </tr>

@@ -50,7 +50,7 @@ const AddProducts = () => {
                         <label>Image Link</label>
                      <input type='text' name='image' placeholder='Image Link' required></input>
                     <label> Short Description</label>
-                     <textarea name='description' cols='50' rows='5' required>
+                     <textarea name='description' cols='40' rows='5' required>
                         write some description 
                      </textarea>
                      <br/>
