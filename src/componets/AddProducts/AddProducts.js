@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 
 const AddProducts = () => {
+    const navigate = useNavigate()
     const handleSubmit = async (e) => {
         e.preventDefault();
         const product = {
@@ -24,6 +26,9 @@ const AddProducts = () => {
        toast.success(data.message);
      
       };
+      const NavigateToManagement = () =>{
+          navigate('/management')
+      }
     return (
         <div>
             <div className='w-75 mx-auto mt-4'>
@@ -49,7 +54,7 @@ const AddProducts = () => {
                      {/* <button
                      disabled={!agree}
                     className='btn btn-primary mt-3 '>Confirm Booking</button> */}
-                    <input type='submit' value='Add Product'></input>
+                    <input  type='submit' value='Add Product'></input>
                 </div>
             </div>
              
