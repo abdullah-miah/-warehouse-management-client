@@ -1,3 +1,6 @@
+import { faCoffee, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
@@ -70,10 +73,10 @@ const Management = () => {
       <td>{product.supplier}</td>
       <td>{product.quantity}</td>
       <td>{product.supplier}</td>
-      <td><button onClick={()=>handelUpdeted(product._id)} >
-        update
-        </button></td>
-      <td><button onClick={()=>handleDelete(product._id)}>Delete</button></td>
+      <td  className='text-primary'>
+     <FontAwesomeIcon className='fs-3' style={{margin: '0px 0px 0px 10px'}} onClick={()=>handelUpdeted(product._id)} icon={faEdit} />
+        </td>
+      <td className='text-danger'><FontAwesomeIcon className='fs-3' style={{margin: '0px 0px 0px 10px'}} icon={faTrash} onClick={()=>handleDelete(product._id)}></FontAwesomeIcon></td>
       
     </tr>
             )

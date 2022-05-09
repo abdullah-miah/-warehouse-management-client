@@ -4,6 +4,8 @@ import { Card, CardGroup, Col, Container, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import CartProduct from '../cartProduct/CartProduct';
+import Managin from '../Managing/Managin';
+import Seller from '../Seller/Seller';
 
 const Home = () => {
     const [products, setProducts] =useState([]);
@@ -31,6 +33,8 @@ const Home = () => {
             }
           
            </div>
+           <Managin></Managin>
+           <Seller></Seller>
         </div>
     );
 };
