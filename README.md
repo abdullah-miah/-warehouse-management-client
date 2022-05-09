@@ -3,9 +3,13 @@
 # Live web site: https://shiny-stroopwafel-390d77.netlify.app/
 
 ## Available Scripts
-*React.js 
-*React Router
-*Bootstrap
+* React.js
+* BootStrap
+* Firebase
+* FontAwesome
+* MongoDB
+* custom css
+* React Router
    
 
 
