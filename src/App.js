@@ -14,6 +14,8 @@ import Login from './componets/Login/Login';
 import Management from './componets/Management/Management';
 import PageNotFound from './componets/PageNotFound/PageNotFound';
 import SignUp from './componets/SignUp/SignUp';
+import UpdatedProducts from './componets/UpdatedProducts/UpdatedProducts';
+
 export const servicesContext = createContext();
 
 function App() {
@@ -27,7 +29,7 @@ function App() {
       <Route path='/blog' element={<Blog></Blog>}></Route>
       <Route path='/signup' element={<SignUp></SignUp>}></Route>
       <Route path='/delivered/:id' element ={<Delivered></Delivered>}></Route>
-      <Route path='/updatedProducts/:id' element ={<Delivered></Delivered>}></Route>
+      <Route path='/updatedProducts/:id' element ={<UpdatedProducts></UpdatedProducts>}></Route>
       <Route path='/management' element={<Management></Management>}></Route>
       <Route path='/addProduct' element={<AddProducts></AddProducts>}></Route>
       <Route path="/login" element={<Login></Login>}></Route>

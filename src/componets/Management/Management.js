@@ -28,14 +28,19 @@ const Management = () => {
        })
     }
     }
+    const handelUpdeted = (id)=>{
+      navigate(`/updatedProducts/${id}`)
+    }
+   
     const addProducts =()=>{
       navigate('/addProduct')
     }
+    
     return (
 
         <div className='w-75 mx-auto'>
           <div className="text-center my-5">
-      <button onClick={addProducts} type="button" className="btn btn-dark text-white w-25">AddProducts</button>
+      <button onClick={addProducts} type="button" className="btn btn-success text-white w-25">AddProducts</button>
     </div>
             <h1 className='text-center text-primary my-3'>Product Management</h1>
             <Table  striped bordered hover>
@@ -65,8 +70,8 @@ const Management = () => {
       <td>{product.supplier}</td>
       <td>{product.quantity}</td>
       <td>{product.supplier}</td>
-      <td><button>
-        Update
+      <td><button onClick={()=>handelUpdeted(product._id)} >
+        update
         </button></td>
       <td><button onClick={()=>handleDelete(product._id)}>Delete</button></td>
       

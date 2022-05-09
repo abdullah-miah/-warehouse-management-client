@@ -1,3 +1,4 @@
+import { paste } from '@testing-library/user-event/dist/paste';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -6,6 +7,8 @@ import { toast } from 'react-toastify';
 const Delivered = () => {
    const {id}= useParams()
    const [products, setProducts] = useState({});
+   const [deliver, setDeliver] =useState();
+
    useEffect(()=>{
     const url =`http://localhost:5000/management/${id}`;   
     fetch(url)
@@ -22,7 +25,6 @@ const handleDeliver = async (e) => {
     const quantity = {
       quantity: e.target.quantity.value, 
     };
-    alert('Successfully Deliverd product')
     e.target.reset();
     const ulr = `http://localhost:5000/management/${id}`;
     fetch(ulr, {

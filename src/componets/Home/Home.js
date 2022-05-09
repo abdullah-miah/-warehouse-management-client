@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Card, CardGroup, Col, Container, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import Banner from '../Banner/Banner';
 import CartProduct from '../cartProduct/CartProduct';
 
 const Home = () => {
@@ -17,7 +18,8 @@ const Home = () => {
 
     return (
         <div className='container w-75'>
-            <h1 className='text-center text-primary'>Available Stock Product</h1>
+            <Banner></Banner>
+            <h1 className='text-center text-primary my-5'>Available Stock Product</h1>
            <div className='row gy-3'>
        
             {
